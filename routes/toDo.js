@@ -31,7 +31,9 @@ routes.post('/', (req, res) => {
         lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
-        birthday: req.body.birthday
+        birthday: req.body.birthday,
+        toDoSubject: req.body.toDoSubject,
+        toDoItem: req.body.toDoItem
     };
     const response = connect.getCollection().insertOne(contact);
     res.json(response);

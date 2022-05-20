@@ -1,29 +1,31 @@
 // LOCALHOST 
 ### 
-GET http://localhost:8080/contacts 
+GET http://localhost:8080/toDo
 ### 
-GET http://localhost:8080/contacts/626d4d098feb6a39c3a8f95d
+GET http://localhost:8080/toDo/6287cda744637c270ecdf3be
 
 ### Create contact
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:8080/toDo HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Aston",
+    "firstName":"Togan",
     "lastName":"Cook",
-    "email":"aCook@test.com",
-    "favoriteColor":"Red",
-    "birthday":"10/28/2001"
+    "email":"tCook@test.com",
+    "favoriteColor":"blue",
+    "birthday":"10/28/2001",
+    "toDoSubject": "Chores",
+    "toDoItem": "Clean the table"
 }
 
 // PRODUCTION Deploy
 ### 
-GET https://cse-341-api.herokuapp.com/contacts 
+GET https://cse-341-tdl.herokuapp.com/toDo 
 ### 
-GET https://cse-341-api.herokuapp.com/contacts/626d4d098feb6a39c3a8f95d 
+GET https://cse-341-tdl.herokuapp.com/toDo/6287cda744637c270ecdf3be 
 
 ### Create contact
-POST https://cse-341-api.herokuapp.com/contacts HTTP/1.1
+POST https://cse-341-tdl.herokuapp.com/toDo HTTP/1.1
 content-type: application/json
 
 {
@@ -31,5 +33,7 @@ content-type: application/json
     "lastName":"Cook",
     "email":"aCook@test.com",
     "favoriteColor":"Red",
-    "birthday":"10/28/2001"
+    "birthday":"10/28/2001",
+    "toDoSubject": "Chores",
+    "toDoItem": "Wash the car"
 }
