@@ -8,7 +8,7 @@ routes.get('/', (req, res) => {
 
     results.toArray().then((documents) => {
         res.status(200).json(documents);
-        console.log(`Returned Contacts Successfully`);
+        console.log(`Returned To do List Successfully`);
     });
 });
 
@@ -21,7 +21,7 @@ routes.get('/:id', (req, res) => {
 
     results.toArray().then((documents) => {
         res.status(200).json(documents[0]);
-        console.log(`Returned Contact ${req.params.id}`);
+        console.log(`Returned To Do ${req.params.id}`);
     });
 });
 
