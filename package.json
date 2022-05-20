@@ -1,0 +1,14 @@
+{
+  "name": "tdl",
+  "version": "1.0.0",
+  "description": "this is my to do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aston cook",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

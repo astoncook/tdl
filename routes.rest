@@ -1,0 +1,35 @@
+// LOCALHOST 
+### 
+GET http://localhost:8080/contacts 
+### 
+GET http://localhost:8080/contacts/626d4d098feb6a39c3a8f95d
+
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Aston",
+    "lastName":"Cook",
+    "email":"aCook@test.com",
+    "favoriteColor":"Red",
+    "birthday":"10/28/2001"
+}
+
+// PRODUCTION Deploy
+### 
+GET https://cse-341-api.herokuapp.com/contacts 
+### 
+GET https://cse-341-api.herokuapp.com/contacts/626d4d098feb6a39c3a8f95d 
+
+### Create contact
+POST https://cse-341-api.herokuapp.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Lston",
+    "lastName":"Cook",
+    "email":"aCook@test.com",
+    "favoriteColor":"Red",
+    "birthday":"10/28/2001"
+}
