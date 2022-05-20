@@ -12,7 +12,7 @@ const initDb = () => {
     MongoClient.connect(process.env.MONGODB_URI, (err, client) => {
         if (err) throw err;
         _client = client;
-        _collection = client.db("contacts").collection("contacts");
+        _collection = client.db("tdl").collection("todo");
         console.log("Db Connected Successfully")
     });
 };
