@@ -1,0 +1,29 @@
+{
+    "item": {
+      "firstName": "Aston",
+      "lastName": "Cook",
+      "email": "coo19025@byui.edu",
+      "favoriteColor": "Red",
+      "birthday": "10/28/2001",
+      "toDoSubject": "Chores",
+      "toDoItem": "Make the bed"
+    },
+    "item2": {
+      "firstName": "Sam",
+      "lastName": "Rod",
+      "email": "SamRod@test.com",
+      "favoriteColor": "Purple",
+      "birthday": "08/27/1998",
+      "toDoSubject": "Chores",
+      "toDoItem": "Wash the dishes"
+    },
+    "item3": {
+      "firstName": "Jen",
+      "lastName": "Bowden",
+      "email": "JenC@test.com",
+      "favoriteColor": "Yellow",
+      "birthday": "02/14/86",
+      "toDoSubject": "Homework",
+      "toDoItem": "Finish CSE 341 assignment"
+    }
+  }
