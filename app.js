@@ -7,9 +7,13 @@ const connect = require('./db/connect');
 connect.initDb();
 
 app
-.use(bodyParser.json())
-.use('/', require('./routes'));
+    .use(bodyParser.json())
+    .use('/', require('./routes'));
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
+});
+
+process.on('uncaughtException', (err, origin) => {
+    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
 });

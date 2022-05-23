@@ -4,7 +4,7 @@ GET http://localhost:8080/toDo
 ### 
 GET http://localhost:8080/toDo/6287cda744637c270ecdf3be
 
-### Create contact
+### Create list
 POST http://localhost:8080/toDo HTTP/1.1
 content-type: application/json
 
@@ -18,13 +18,26 @@ content-type: application/json
     "toDoItem": "Clean the table"
 }
 
+### PUT list
+PUT http://localhost:3000/lists/6287ce1d0e4b88dcd2c1c9c5 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Lopgan",
+    "lastName":"Cook",
+    "email":"CoolKidCooktest@gmail.com",
+    "favoriteColor":"Green",
+    "birthday":"10/28/2011"
+}
+### DELETE list
+DELETE http://localhost:3000/lists/6287ceb8c23e5ebd3cfc434c HTTP/1.1
 // PRODUCTION Deploy
 ### 
 GET https://cse-341-tdl.herokuapp.com/toDo 
 ### 
 GET https://cse-341-tdl.herokuapp.com/toDo/6287cda744637c270ecdf3be 
 
-### Create contact
+### Create list
 POST https://cse-341-tdl.herokuapp.com/toDo HTTP/1.1
 content-type: application/json
 
@@ -37,3 +50,17 @@ content-type: application/json
     "toDoSubject": "Chores",
     "toDoItem": "Wash the car"
 }
+
+### PUT list
+PUT https://cse-341-tdl.herokuapp.com/toDo/6287ce1d0e4b88dcd2c1c9c5 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Bston",
+    "lastName":"Cook",
+    "email":"aCook@test.com",
+    "favoriteColor":"Brown",
+    "birthday":"10/28/2001"
+}
+### DELETE list
+DELETE https://cse-341-tdl.herokuapp.com/toDo/6287ce1d0e4b88dcd2c1c9c5 HTTP/1.1
