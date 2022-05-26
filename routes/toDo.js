@@ -7,7 +7,7 @@ routes.get('/', (req, res) => {
 
     const results = connect.getCollection().find();
 
-    results.toArray().then((documents) => {
+    results.toArray().then((documents, err) => {
         if (err) {
             res.status(400).json({
                 message: err
@@ -28,7 +28,7 @@ routes.get('/:id', (req, res) => {
         _id: toDoId
     });
 
-    results.toArray().then((documents) => {
+    results.toArray().then((documents, err) => {
         if (err) {
             res.status(400).json({
                 message: err
@@ -50,7 +50,7 @@ routes.post('/', (req, res) => {
         toDoItem: req.body.toDoItem
     };
     const response = connect.getCollection().insertOne(toDo);
-    if (response.acknowledged) {
+    if (response) {
         res.status(201).json(response);
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the to do list.');
@@ -75,8 +75,8 @@ routes.put('/:id', (req, res) => {
         _id: userId
     }, toDo);
     console.log(response);
-    if (response.modifiedCount > 0) {
-        res.status(204).send();
+    if (response) {
+        res.status(204).json(response);
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the to do list.');
     }
@@ -91,8 +91,8 @@ routes.delete('/:id', (req, res) => {
         _id: userId
     }, true);
     console.log(response);
-    if (response.deletedCount > 0) {
-        res.status(204).send();
+    if (response) {
+        res.status(204).json(response);
     } else {
         res.status(500).json(response.error || 'Some error occurred while deleting the to do list.');
     }

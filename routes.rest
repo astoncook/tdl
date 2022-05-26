@@ -15,22 +15,24 @@ content-type: application/json
     "favoriteColor":"blue",
     "birthday":"10/28/2001",
     "toDoSubject": "Chores",
-    "toDoItem": "Clean the table"
+    "toDoItem": "Clean the tables"
 }
 
 ### PUT list
-PUT http://localhost:3000/lists/6287ce1d0e4b88dcd2c1c9c5 HTTP/1.1
+PUT http://localhost:8080/toDo/6287ceb8c23e5ebd3cfc434c HTTP/1.1
 content-type: application/json
 
 {
     "firstName":"Lopgan",
     "lastName":"Cook",
-    "email":"CoolKidCooktest@gmail.com",
+    "email":"CookKidCooktest@gmail.com",
     "favoriteColor":"Green",
-    "birthday":"10/28/2011"
+    "birthday":"10/28/2011",
+    "toDoSubject": "Chores",
+    "toDoItem": "Clean the tables"
 }
 ### DELETE list
-DELETE http://localhost:3000/lists/6287ceb8c23e5ebd3cfc434c HTTP/1.1
+DELETE http://localhost:8080/toDo/6287ceb8c23e5ebd3cfc434c HTTP/1.1
 // PRODUCTION Deploy
 ### 
 GET https://cse-341-tdl.herokuapp.com/toDo 
