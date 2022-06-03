@@ -2,11 +2,11 @@ const routes = require('express').Router();
 const connect = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const validation = require('../middleware/validate');
-const { ensureAuth } = require('../middleware/auth')
+//const  } = require('../middleware/auth')
 
 const Story = require('../models/Story')
 
-routes.get('/', ensureAuth, (req, res) => {
+routes.get('/', (req, res) => {
 
     const results = connect.getCollection().find();
 
@@ -21,7 +21,7 @@ routes.get('/', ensureAuth, (req, res) => {
     });
 });
 
-routes.get('/:id', ensureAuth, (req, res) => {
+routes.get('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid toDo id to find a toDo.');
     }
@@ -42,7 +42,7 @@ routes.get('/:id', ensureAuth, (req, res) => {
     });
 });
 
-routes.post('/', ensureAuth, (req, res) => {
+routes.post('/', (req, res) => {
     const toDo = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -60,7 +60,7 @@ routes.post('/', ensureAuth, (req, res) => {
     }
 });
 
-routes.put('/:id', ensureAuth, (req, res) => {
+routes.put('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid toDo id to update a toDo.');
     }
@@ -85,7 +85,7 @@ routes.put('/:id', ensureAuth, (req, res) => {
     }
 });
 
-routes.delete('/:id', ensureAuth, (req, res) => {
+routes.delete('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid toDo id to delete a toDo.');
     }
